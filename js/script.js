@@ -92,4 +92,70 @@ function task7() {
 }
 
 
+function task8() {
+    const holidays = [
+        {
+            day: 1,
+            month: 0,
+            title: 'Новый год',
+        },
+        {
+            day: 7,
+            month: 0,
+            title: 'Рождество Христово',
+        },
+        {
+            day: 23,
+            month: 1,
+            title: 'День защитника Отечества',
+        },
+        {
+            day: 8,
+            month: 2,
+            title: 'Международный женский день',
+        },
+        {
+            day: 1,
+            month: 4,
+            title: 'Праздник Весны и Труда',
+        },
+        {
+            day: 9,
+            month: 4,
+            title: 'День Победы',
+        },
+        {
+            day: 12,
+            month: 5,
+            title: 'День России',
+        },
+        {
+            day: 4,
+            month: 10,
+            title: 'День народного единства',
+        },
+    ];
+
+    holidays.forEach((holiday) => {
+        const date = new Date();
+        const dayHoliday = new Date(date.getFullYear(), holiday.month, holiday.day);
+        console.log(`${holiday.day} ${chengeString(holiday.month)} ${holiday.title} --- ${days[dayHoliday.getDay()]}`);
+    });
+}
+
+
+function chengeString(number) {
+    const months = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
+
+    const monthsChange = months.map((month) => {
+        if (month.endsWith('ь') || month.endsWith('й')) {
+            month = month.slice(0, month.length - 1) + 'я';
+        } else {
+            month = month + 'а';
+        }
+        return month;
+    });
+    return monthsChange[number];
+}
+
 
