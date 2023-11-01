@@ -23,3 +23,26 @@ a {
     gap: 1rem;
 }
 
+.item {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    align-items:center;
+   
+}
+.item h2 {
+    text-align: center;
+}
+.item h2 span {
+    display: block;
+}
+
+.item a {
+    display: inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height: 3rem;
+    padding: 0 4rem;
+    background-color: #794f45;
+    color: #fff;
+}
