@@ -43,4 +43,13 @@ function task4(seconds) {
     return time;
 }
 
-console.log(task4(60000));
+function task5(year, month, day) {
+    const now = new Date();
+    const birthday = new Date(year, month, day);
+    const birthdayInThisYear = new Date(now.getFullYear(), birthday.getMonth(), birthday.getDate());
+    let age = now.getFullYear() - birthday.getFullYear();
+    if (birthdayInThisYear > now) {
+        age -= 1;
+    }
+    console.log(`возраст в годах ${age},в месяцах ${age * 12},в днях ${age*365}`);
+}
