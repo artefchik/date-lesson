@@ -76,3 +76,20 @@ function task6(year) {
         console.log('в этом году нет пятниц 13');
     }
 }
+
+function task7() {
+    const date = new Date();
+    const hour = date.getHours();
+    if (hour > 6 && hour < 12) {
+        console.log('доброе утро');
+    } else if (hour > 12 && hour < 17) {
+        console.log('добрый день');
+    } else if (hour > 17 && hour < 24) {
+        console.log('добрый вечер');
+    } else if (hour > 0 && hour < 6) {
+        console.log('доброй ночи');
+    }
+}
+
+
+
