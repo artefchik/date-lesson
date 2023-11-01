@@ -33,3 +33,14 @@ function task3() {
     return objDays;
 }
 
+function task4(seconds) {
+    const time = {
+        day: (seconds / (60 * 60 * 24)).toFixed(2),
+        hour: (seconds / (60 * 60)).toFixed(2),
+        minute: (seconds / 60).toFixed(2),
+        seconds: seconds,
+    };
+    return time;
+}
+
+console.log(task4(60000));
