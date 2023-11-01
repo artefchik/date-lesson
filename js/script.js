@@ -12,7 +12,6 @@ function task2() {
     console.log(`До Нового года осталось ${day}`);
 }
 
-
 function task3() {
     const date = new Date();
     const day = date.getDay();
@@ -51,5 +50,29 @@ function task5(year, month, day) {
     if (birthdayInThisYear > now) {
         age -= 1;
     }
-    console.log(`возраст в годах ${age},в месяцах ${age * 12},в днях ${age*365}`);
+    console.log(`возраст в годах ${age},в месяцах ${age * 12},в днях ${age * 365}`);
+}
+
+function task6(year) {
+    let arrayFriday = [];
+    const months = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
+    for (let month = 0; month < 12; month++) {
+        const date = new Date(year, month, 13);
+        if (date.getDay() == 5) {
+            const objDate = {
+                day: date.getDate(),
+                month: months[date.getMonth()],
+                year: date.getFullYear(),
+            };
+
+            arrayFriday.push(objDate);
+        }
+    }
+    if (arrayFriday.length > 0) {
+        arrayFriday.forEach((item) => {
+            console.log(item);
+        });
+    } else {
+        console.log('в этом году нет пятниц 13');
+    }
 }
