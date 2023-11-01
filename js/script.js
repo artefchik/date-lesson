@@ -12,3 +12,24 @@ function task2() {
     console.log(`До Нового года осталось ${day}`);
 }
 
+
+function task3() {
+    const date = new Date();
+    const day = date.getDay();
+    let next = day + 1;
+    let prev = day - 1;
+    if (day == 0) {
+        next = day + 1;
+        prev = 6;
+    } else if (day == 6) {
+        next = 0;
+        prev = day - 1;
+    }
+    const objDays = {
+        next: days[next],
+        current: days[day],
+        prev: days[prev],
+    };
+    return objDays;
+}
+
